@@ -7,7 +7,7 @@ const ScatterChart = ({ chartData }) => {
       labels: chartData.expenses,
       datasets: [
         {
-          label: 'Monthly Sales',
+          label: 'Profit to Expense Ratios',
           data: chartData.profits,
           backgroundColor: 'rgba(94, 41, 255, 0.5)',
           borderColor: 'rgba(94, 41, 255, 1)',
