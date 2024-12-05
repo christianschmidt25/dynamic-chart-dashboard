@@ -4,11 +4,11 @@ import { Bar } from "/node_modules/react-chartjs-2";
 
 const BarChart = ({ chartData }) => {
     const barChartData = {
-      labels: chartData.months,
+      labels: chartData?.months,
       datasets: [
         {
           label: 'Monthly Sales',
-          data: chartData.sales,
+          data: chartData?.sales,
           backgroundColor: 'rgba(94, 41, 255, 0.5)',
           borderColor: 'rgba(94, 41, 255, 1)',
           borderWidth: 1,

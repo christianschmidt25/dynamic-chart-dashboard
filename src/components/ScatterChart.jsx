@@ -4,11 +4,11 @@ import { Scatter } from "/node_modules/react-chartjs-2";
 
 const ScatterChart = ({ chartData }) => {
     const scatterChartData = {
-      labels: chartData.expenses,
+      labels: chartData?.expenses,
       datasets: [
         {
           label: 'Profit to Expense Ratios',
-          data: chartData.profits,
+          data: chartData?.profits,
           backgroundColor: 'rgba(94, 41, 255, 0.5)',
           borderColor: 'rgba(94, 41, 255, 1)',
           borderWidth: 1,

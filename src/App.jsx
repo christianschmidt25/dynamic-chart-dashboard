@@ -22,9 +22,9 @@ function App() {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Dynamic Charts with React and Chart.js</h1>
-      <BarChart data={chartData} />
-      <LineChart data={chartData} />
-      <ScatterChart data={chartData} />
+      <BarChart chartData={chartData} />
+      <LineChart chartData={chartData} />
+      <ScatterChart chartData={chartData} />
     </div>
   );
 }

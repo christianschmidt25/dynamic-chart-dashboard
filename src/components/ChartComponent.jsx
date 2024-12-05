@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Chart } from '/node_modules/chart.js';
 
-const ChartComponent = ({type, data, options}) => {
+const ChartComponent = ({ type, data, options }) => {
     const chartRef = useRef(null);
     const chartInstanceRef = useRef(null);
 
@@ -26,7 +26,7 @@ const ChartComponent = ({type, data, options}) => {
         };
     }, [type, data, options]);
 
-    return <canvas ref={chartRef}></canvas>
+    return <canvas ref={chartRef}></canvas>;
 };
 
 export default ChartComponent;
