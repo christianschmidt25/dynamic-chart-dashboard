@@ -3,7 +3,6 @@ import ChartComponent from './components/ChartComponent'
 import BarChart from './components/BarChart';
 import LineChart from './components/LineChart';
 import ScatterChart from './components/ScatterChart';
-import { Bar, Line, Scatter, Bubble } from '/node_modules/react-chartjs-2';
 import './App.css'
 
 function App() {
@@ -11,8 +10,12 @@ function App() {
 
   useEffect(() => {
     fetch('/financial_data.json')
-    .then((response) => response.json())
-    .then((chartData) => setChartData(chartData));
+    .then((response) => {
+      if (!response.ok) throw new Error('Response not ok');
+      return response.json();
+    })
+    .then((chartData) => setChartData(chartData))
+    .catch((error) => console.error('Fetch error:', error));
   }, []);
 
   if (!chartData) {

@@ -1,6 +1,5 @@
 import React from "react";
 import ChartComponent from "./ChartComponent";
-import { Line } from "/node_modules/react-chartjs-2";
 
 const LineChart = ({ chartData }) => {
     const lineChartData = {
