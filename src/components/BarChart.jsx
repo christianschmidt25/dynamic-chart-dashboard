@@ -1,14 +1,14 @@
 import React from "react";
 import ChartComponent from "./ChartComponent";
-import { Bar } from "./node_modules/react-chartjs-2";
+import { Bar } from "/node_modules/react-chartjs-2";
 
-const BarChart = ({ data }) => {
+const BarChart = ({ chartData }) => {
     const barChartData = {
-      labels: data.months,
+      labels: chartData.months,
       datasets: [
         {
           label: 'Monthly Sales',
-          data: data.sales,
+          data: chartData.sales,
           backgroundColor: 'rgba(94, 41, 255, 0.5)',
           borderColor: 'rgba(94, 41, 255, 1)',
           borderWidth: 1,

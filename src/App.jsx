@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import ChartComponent from '/components/ChartComponent'
-import BarChart from '/components/BarChart';
+import ChartComponent from './components/ChartComponent'
+import BarChart from './components/BarChart';
 import { Bar, Line, Scatter, Bubble } from '/node_modules/react-chartjs-2';
 import './App.css'
 
@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     fetch('/financial_data.json')
     .then((response) => response.json())
-    .then((data) => setChartData(data));
+    .then((chartData) => setChartData(chartData));
   }, []);
 
   if (!chartData) {
