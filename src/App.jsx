@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import ChartComponent from './components/ChartComponent'
 import BarChart from './components/BarChart';
 import LineChart from './components/LineChart';
 import ScatterChart from './components/ScatterChart';
@@ -11,7 +10,8 @@ function App() {
   useEffect(() => {
     fetch('/financial_data.json')
       .then((response) => response.json())
-      .then((chartData) => setChartData(chartData));
+      .then((data) => setChartData(data))
+      .catch((error) => ('Error Fetching JSON:', error))
   }, []);
 
   if (!chartData) {
@@ -21,9 +21,9 @@ function App() {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Dynamic Charts with React and Chart.js</h1>
-      <BarChart data={chartData} />
-      <LineChart data={chartData} />
-      <ScatterChart data={chartData} />
+      <BarChart chartData={chartData} />
+      <LineChart chartData={chartData} />
+      <ScatterChart chartData={chartData} />
     </div>
   );
 }
