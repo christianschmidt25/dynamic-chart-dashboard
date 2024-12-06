@@ -2,6 +2,18 @@ import React from "react";
 import ChartComponent from "./ChartComponent";
 
 const BubbleChart = ({ chartData }) => {
+
+    const minSize = 5;
+    const maxSize = 30;
+
+    const maxSales = Math.max(...chartData.sales);
+    const minSales = Math.min(...chartData.sales);
+
+    const scaleRadius = (value) => {
+        if (maxSales === minSales) return (minSize + maxSize) / 2; 
+        return ((value - minSales) / (maxSales - minSales)) * (maxSize - minSize) + minSize;
+    };
+
     const bubbleChartData = {
       datasets: [
         {
@@ -9,8 +21,8 @@ const BubbleChart = ({ chartData }) => {
           data: chartData?.expenses.map((expense, index) => ({
             x: expense,
             y: chartData.profits[index],
-            r: chartData.sales[index],
-          })),
+            r: scaleRadius(chartData.sales[index]),
+        })),
           backgroundColor: 'rgba(94, 41, 255, 0.5)',
           borderColor: 'rgba(94, 41, 255, 1)',
           borderWidth: 1,
@@ -37,7 +49,7 @@ const BubbleChart = ({ chartData }) => {
         },
     };
 
-    return <ChartComponent type="scatter" data={bubbleChartData} options={bubbleChartOptions} />;
+    return <ChartComponent type="bubble" data={bubbleChartData} options={bubbleChartOptions} />;
 };
 
 export default BubbleChart;
