@@ -6,11 +6,11 @@ const BubbleChart = ({ chartData }) => {
       datasets: [
         {
           label: 'Expenses, Profits, and Sales',
-          data: {
-            x: [chartData?.expenses],
-            y: [chartData?.profits],
-            size: [chartData?.sales],
-          },
+          data: chartData?.expenses.map((expense, index) => ({
+            x: expense,
+            y: chartData.profits[index],
+            r: chartData.sales[index],
+          })),
           backgroundColor: 'rgba(94, 41, 255, 0.5)',
           borderColor: 'rgba(94, 41, 255, 1)',
           borderWidth: 1,
@@ -19,11 +19,22 @@ const BubbleChart = ({ chartData }) => {
     };
 
     const bubbleChartOptions = {
-      scales: {
-        y: {
-          beginAtZero: true,
+        scales: {
+            x: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Expenses',
+                },
+            },
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Profits',
+                },
+            },
         },
-      },
     };
 
     return <ChartComponent type="scatter" data={bubbleChartData} options={bubbleChartOptions} />;
