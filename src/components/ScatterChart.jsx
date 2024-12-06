@@ -8,8 +8,8 @@ const ScatterChart = ({ chartData }) => {
         {
           label: 'Profit to Expense Ratios',
           data: chartData?.profits,
-          backgroundColor: 'rgba(94, 41, 255, 0.5)',
-          borderColor: 'rgba(94, 41, 255, 1)',
+          backgroundColor: 'rgba(32, 201, 142, 0.5)',
+          borderColor: 'rgba(32, 201, 142, 1)',
           borderWidth: 1,
         },
       ],
@@ -33,7 +33,7 @@ const ScatterChart = ({ chartData }) => {
             },
         },
     }
-    
+
     return <ChartComponent type="scatter" data={scatterChartData} options={scatterChartOptions} />;
 };
 
