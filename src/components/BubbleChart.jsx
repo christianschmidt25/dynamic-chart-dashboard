@@ -9,7 +9,7 @@ const BubbleChart = ({ chartData }) => {
     const maxSales = Math.max(...chartData.sales);
     const minSales = Math.min(...chartData.sales);
 
-    const scaleRadius = (value) => {
+    const scaleRadius = (value) => { //adds a sizing factor since the sales create too big of bubbles
         if (maxSales === minSales) return (minSize + maxSize) / 2; 
         return ((value - minSales) / (maxSales - minSales)) * (maxSize - minSize) + minSize;
     };
@@ -21,7 +21,7 @@ const BubbleChart = ({ chartData }) => {
           data: chartData?.expenses.map((expense, index) => ({
             x: expense,
             y: chartData.profits[index],
-            r: scaleRadius(chartData.sales[index]),
+            r: scaleRadius(chartData.sales[index]), //implements the size restructuring
         })),
           backgroundColor: 'rgba(130, 70, 109, 0.5)',
           borderColor: 'rgba(130, 70, 109, 1)',
