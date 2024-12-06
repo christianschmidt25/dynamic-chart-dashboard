@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import BarChart from './components/BarChart';
 import LineChart from './components/LineChart';
 import ScatterChart from './components/ScatterChart';
+import BubbleChart from './components/BubbleChart';
 import './App.css'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <BarChart chartData={chartData} />
       <LineChart chartData={chartData} />
       <ScatterChart chartData={chartData} />
+      <BubbleChart chartData={chartData} />
     </div>
   );
 }

@@ -23,8 +23,6 @@ const BarChart = ({ chartData }) => {
       },
     };
 
-    console.log('ChartData:', chartData)
-
     return <ChartComponent type="bar" data={barChartData} options={barChartOptions} />;
 };
 
