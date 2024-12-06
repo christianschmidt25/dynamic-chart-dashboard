@@ -16,11 +16,22 @@ const LineChart = ({ chartData }) => {
     };
 
     const lineChartOptions = {
-      scales: {
-        y: {
-          beginAtZero: true,
+        scales: {
+            x: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Months',
+                },
+            },
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Profits',
+                },
+            },
         },
-      },
     };
 
     return <ChartComponent type="line" data={lineChartData} options={lineChartOptions} />;

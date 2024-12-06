@@ -16,13 +16,24 @@ const ScatterChart = ({ chartData }) => {
     };
 
     const scatterChartOptions = {
-      scales: {
-        y: {
-          beginAtZero: true,
+        scales: {
+            x: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Expenses',
+                },
+            },
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Profits',
+                },
+            },
         },
-      },
-    };
-
+    }
+    
     return <ChartComponent type="scatter" data={scatterChartData} options={scatterChartOptions} />;
 };
 

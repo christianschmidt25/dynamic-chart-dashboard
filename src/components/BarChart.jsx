@@ -16,11 +16,22 @@ const BarChart = ({ chartData }) => {
     };
 
     const barChartOptions = {
-      scales: {
-        y: {
-          beginAtZero: true,
+        scales: {
+            x: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Months',
+                },
+            },
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Sales',
+                },
+            },
         },
-      },
     };
 
     return <ChartComponent type="bar" data={barChartData} options={barChartOptions} />;

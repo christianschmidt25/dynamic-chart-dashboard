@@ -22,10 +22,10 @@ function App() {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Dynamic Charts with React and Chart.js</h1>
-      <BarChart chartData={chartData} />
-      <LineChart chartData={chartData} />
-      <ScatterChart chartData={chartData} />
-      <BubbleChart chartData={chartData} />
+      <BarChart chartData={chartData} /> 
+      <LineChart chartData={chartData} /> 
+      <ScatterChart chartData={chartData} /> 
+      <BubbleChart chartData={chartData} /> 
     </div>
   );
 }
