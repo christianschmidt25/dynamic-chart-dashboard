@@ -10,12 +10,8 @@ function App() {
 
   useEffect(() => {
     fetch('/financial_data.json')
-    .then((response) => {
-      if (!response.ok) throw new Error('Response not ok');
-      return response.json();
-    })
-    .then((chartData) => setChartData(chartData))
-    .catch((error) => console.error('Fetch error:', error));
+      .then((response) => response.json())
+      .then((chartData) => setChartData(chartData));
   }, []);
 
   if (!chartData) {
@@ -25,9 +21,9 @@ function App() {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Dynamic Charts with React and Chart.js</h1>
-      <BarChart chartData={chartData} />
-      <LineChart chartData={chartData} />
-      <ScatterChart chartData={chartData} />
+      <BarChart data={chartData} />
+      <LineChart data={chartData} />
+      <ScatterChart data={chartData} />
     </div>
   );
 }
